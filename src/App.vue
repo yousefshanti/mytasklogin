@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { RouterLink, RouterView, useRoute } from 'vue-router'
 import HomeView from './views/HomeView.vue'
-export default {
-  name: 'routerfun',
+function redirect() {
+  const router =useRoute();
   methods: {
     router() {
-      this.$router.push('/about');
+      
+      router.push('/about');
       
     }
   }
@@ -26,7 +27,7 @@ export default {
               </div> 
               <div class="text-blue-600 no-underline text-sm">
                 
-                   <button @click="router()" class=" bg-white my-6 mx-auto absolute left-[6%] py-[5px] px-[120px]  border border-blue-600 text-blue-600 rounded-md " >LOG IN</button>
+                   <button @click="redirect()" class=" bg-white my-6 mx-auto absolute left-[6%] py-[5px] px-[120px]  border border-blue-600 text-blue-600 rounded-md " >LOG IN</button>
                
                 <button class="absolute bottom-0 left-5 h-16 w-30" >CONTACT SUPPORT</button>
               </div>

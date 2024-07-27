@@ -1,9 +1,19 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRoute } from 'vue-router'
 import HomeView from './views/HomeView.vue'
-
+export default {
+  name: 'routerfun',
+  methods: {
+    router() {
+      this.$router.push('/about');
+      
+    }
+  }
+}
 </script>
+
 <template>
+  
   <body class="h-screen bg-gray-200 ">
     <div class=" bg-white rounded-lg fixed p-6 w-1/3 h-1/2 text-blue-600 left-1/3 bottom-1/4 font-sans">
     <div class=" text-3xl ">Login</div>
@@ -15,9 +25,9 @@ import HomeView from './views/HomeView.vue'
                 <input class="w-4/5  mt-3 mb-0 outline-none border-b border-gray-300 focus-within:border-blue-600 " type="password" name="password" placeholder="Password" required >
               </div> 
               <div class="text-blue-600 no-underline text-sm">
-                <Router-link to="/">
-                   <button class="bg-white my-6 mx-auto absolute left-[6%] py-[5px] px-[120px]  border border-blue-600 text-blue-600 rounded-md " >LOG IN</button>
-                </Router-link>
+                
+                   <button @click="router()" class=" bg-white my-6 mx-auto absolute left-[6%] py-[5px] px-[120px]  border border-blue-600 text-blue-600 rounded-md " >LOG IN</button>
+               
                 <button class="absolute bottom-0 left-5 h-16 w-30" >CONTACT SUPPORT</button>
               </div>
         </form>

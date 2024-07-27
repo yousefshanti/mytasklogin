@@ -1,85 +1,31 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import HomeView from './views/HomeView.vue'
+
 </script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <body class="h-screen bg-gray-200 ">
+    <div class=" bg-white rounded-lg fixed p-6 w-1/3 h-1/2 text-blue-600 left-1/3 bottom-1/4 font-sans">
+    <div class=" text-3xl ">Login</div>
+        <span class="text-xs">ENTER YOUR DETAILS BELOW TO CONTINUE</span>
+        <form action="">
+               <div >
+                <input class="w-4/5 mt-3 mb-0 outline-none border-b border-gray-300 focus-within:border-blue-600  border-gray-30" type="text"  name="ID" placeholder="TenantID" required >
+                <input class="w-4/5  mt-3 mb-0 outline-none border-b border-gray-300 focus-within:border-blue-600 " type="email" name="email" placeholder="Username" required >
+                <input class="w-4/5  mt-3 mb-0 outline-none border-b border-gray-300 focus-within:border-blue-600 " type="password" name="password" placeholder="Password" required >
+              </div> 
+              <div class="text-blue-600 no-underline text-sm">
+                <Router-link to="/">
+                   <button class="bg-white my-6 mx-auto absolute left-[6%] py-[5px] px-[120px]  border border-blue-600 text-blue-600 rounded-md " >LOG IN</button>
+                </Router-link>
+                <button class="absolute bottom-0 left-5 h-16 w-30" >CONTACT SUPPORT</button>
+              </div>
+        </form>
+        <img class="absolute  bottom-2 right-2  w-16 ..." src="/Users/yousefshanti/Desktop/Log in page_files/flow.png" alt="logo">
+  </div>
+  </body>
+ 
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
+      
+  

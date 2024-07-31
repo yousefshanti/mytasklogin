@@ -53,7 +53,7 @@
           />
         </div>
 
-        <div class="left-2 absolute top-96 my-16">
+        <div class="left-2 absolute bottom-2 ">
           <span class="p-3 text-xl rounded-full bg-stone-200 text-blue-500"
             >FR</span
           >
@@ -88,7 +88,7 @@
           <!--sub-menu-->
 
       
-        <div class="absolute top-14  left-4  w-52">
+        <div class="absolute top-14  left-4  w-4/5 border-b-2 border-gray-200">
           <button @click="subone" class="flex justify-start size-4/6 mx-0 my-4">
             <img
               class="inline size-7"
@@ -192,7 +192,9 @@
             />
             <span class="not-italic text-left text-l">EpanetDemo</span>
           </button>
-          <div class=" w-full border-t border-gray-200"> 
+          
+            </div>
+            <div class="absolute w-full bottom-2 left-4"> 
           <span class="p-3 text-xl rounded-full bg-stone-200 text-blue-500"
             >FR</span
           >
@@ -202,8 +204,6 @@
             alt=""
           />
           </div>  
-            </div>
-
           
         </div>
 

@@ -85,7 +85,10 @@
           </button>
         </div>
 
-        <div class="absolute top-14 border-b-2 left-4 border-gray-200">
+          <!--sub-menu-->
+
+      
+        <div class="absolute top-14  left-4  w-52">
           <button @click="subone" class="flex justify-start size-4/6 mx-0 my-4">
             <img
               class="inline size-7"
@@ -94,6 +97,22 @@
             />
             <span class="not-italic text-left text-l"> EpanetDemo</span>
           </button>
+
+          <div v-if="list1" class="mx-2 py-2 border-b bg-white">
+            <a
+              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
+              >Epanet Demo</a
+            >
+            <a
+              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
+              >Mobail View</a
+            >
+            <a
+              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
+              >Default View</a
+            >
+          </div>
+
 
           <button @click="subtwo" class="flex justify-start size-4/6 mx-0 my-4">
             <img
@@ -104,7 +123,20 @@
 
             <span class="not-italic text-left text-l">EpanetDemo</span>
           </button>
-
+          <div v-if="list2" class="mx-2 py-2 border-b bg-white">
+            <a
+              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
+              >Epanet Demo</a
+            >
+            <a
+              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
+              >Mobail View</a
+            >
+            <a
+              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
+              >Default View</a
+            >
+          </div>
           <button class="flex justify-start size-4/6 mx-0 my-4">
             <img
               class="inline size-7"
@@ -152,48 +184,15 @@
             <span class="not-italic text-left text-l">EpanetDemo</span>
           </button>
 
-          <button class="flex justify-start size-4/6 mx-0 my-4">
+          <button class="flex justify-start size-4/6 mx-0 my-4 ">
             <img
               class="inline size-7"
               src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.38 PM.png"
               alt=""
             />
-
             <span class="not-italic text-left text-l">EpanetDemo</span>
           </button>
-
-          <div v-if="list1" class="mx-2 py-2 border-b bg-white">
-            <a
-              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
-              >Epanet Demo</a
-            >
-            <a
-              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
-              >Mobail View</a
-            >
-            <a
-              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
-              >Default View</a
-            >
-          </div>
-
-          <div v-if="list2" class="mx-2 py-2 border-b bg-white">
-            <a
-              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
-              >Epanet Demo</a
-            >
-            <a
-              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
-              >Mobail View</a
-            >
-            <a
-              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
-              >Default View</a
-            >
-          </div>
-        </div>
-
-        <div class="left-2 absolute top-96 my-16">
+          <div class=" w-full border-t border-gray-200"> 
           <span class="p-3 text-xl rounded-full bg-stone-200 text-blue-500"
             >FR</span
           >
@@ -202,9 +201,15 @@
             src="/Users/yousefshanti/Desktop/Screenshot 2024-07-31 at 12.57.02 AM.png"
             alt=""
           />
+          </div>  
+            </div>
+
+          
         </div>
+
+       
       </div>
-    </div>
+   
   </body>
 </template>
 

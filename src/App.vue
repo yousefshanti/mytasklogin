@@ -1,44 +1,232 @@
-<template >
-  <!-- 
- not complete main menu
-   --> 
- <div class="absolute inset-y-0 left-0 w-16 bg-gray-300">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-</svg>
+<template>
+  <!-- Main Menu -->
+  <body class="h-screen bg-stone-200">
+    <div class="gap-y-2 absolute inset-y-0 left-0 w-16 bg-white">
+      <div class="">
+        <button @click="toggleSidebar" class="size-10 m-4 absolute">
+          <img
+            class="border-b-2 border-gray-200 object-cover"
+            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 1.46.58 PM.png"
+            alt=""
+          />
+        </button>
+        <div class="absolute top-14 border-b-2 left-4 border-gray-200">
+          <img
+            class="size-7 mx-0 my-4"
+            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.32.42 PM.png"
+            alt=""
+          />
+          <img
+            class="size-7 mx-0 my-4"
+            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.32.49 PM.png"
+            alt=""
+          />
+          <img
+            class="size-7 mx-0 my-4"
+            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.00 PM.png"
+            alt=""
+          />
+          <img
+            class="size-7 mx-0 my-4"
+            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.09 PM.png"
+            alt=""
+          />
+          <img
+            class="size-7 mx-0 my-4"
+            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.17 PM.png"
+            alt=""
+          />
+          <img
+            class="size-7 mx-0 my-4"
+            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.25 PM.png"
+            alt=""
+          />
+          <img
+            class="size-7 mx-0 my-4"
+            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.31 PM.png"
+            alt=""
+          />
+          <img
+            class="size-7 mx-0 my-4"
+            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.38 PM.png"
+            alt=""
+          />
+        </div>
 
-</div>
- 
-  
+        <div class="left-2 absolute top-96 my-16">
+          <span class="p-3 text-xl rounded-full bg-stone-200 text-blue-500"
+            >FR</span
+          >
+          <img
+            class="size-7 m-2 my-6"
+            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-31 at 12.57.02 AM.png"
+            alt=""
+          />
+        </div>
+      </div>
 
-  <div class="  size-56 left-12 top-10 relative ">
-    <button @click="toggleVisiblity" class="  m-4 w-10/12 bg-white border-b border-gray-300" >
-      <img  class=" inline h-8 w-8 object-cover" src="/Users/yousefshanti/Desktop/Screenshot 2024-07-28 at 5.15.35 PM.png">
-        <span class=" not-italic text-left justify-center items-center text-l ">Epanet Demo</span>
-    </button>
-  
-   
-    <div v-if="isVisble" class=" mx-2 py-2 border-b border-gray-300 ">
-      <a class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Epanet Demo</a>
-      <a class="block px-4 py-2 text-gray-800 hover:bg-blue-600  hover:text-white">Mobail View</a>
-      <a class="block px-4 py-2 text-gray-800 hover:bg-blue-600  hover:text-white">Default View</a>
+      <div v-if="menu" class="absolute inset-y-0 left-0 w-56 bg-white">
+        <div class="absolute m-4 w-10/12 border-b border-gray-300">
+          <button @click="toggleSidebar" class="flex justify-start size-5/6">
+            <img
+              class="inline h-12 w-10"
+              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 1.46.58 PM.png"
+              alt=""
+            />
+            <span
+              class="not-italic text-left justify-center items-center text-2xl text-blue-500"
+              >flowess</span
+            >
+            <img
+              class="absolute inline size-6 right-0 top-2"
+              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 2.21.54 PM.png"
+              alt=""
+            />
+          </button>
+        </div>
+
+        <div class="absolute top-14 border-b-2 left-4 border-gray-200">
+          <button @click="subone" class="flex justify-start size-4/6 mx-0 my-4">
+            <img
+              class="inline size-7"
+              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.32.42 PM.png"
+              alt=""
+            />
+            <span class="not-italic text-left text-l"> EpanetDemo</span>
+          </button>
+
+          <button @click="subtwo" class="flex justify-start size-4/6 mx-0 my-4">
+            <img
+              class="inline size-7"
+              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.32.49 PM.png"
+              alt=""
+            />
+
+            <span class="not-italic text-left text-l">EpanetDemo</span>
+          </button>
+
+          <button class="flex justify-start size-4/6 mx-0 my-4">
+            <img
+              class="inline size-7"
+              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.00 PM.png"
+              alt=""
+            />
+
+            <span class="not-italic text-left text-l">EpanetDemo</span>
+          </button>
+
+          <button class="flex justify-start size-4/6 mx-0 my-4">
+            <img
+              class="inline size-7"
+              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.09 PM.png"
+              alt=""
+            />
+
+            <span class="not-italic text-left text-l">EpanetDemo</span>
+          </button>
+          <button class="flex justify-start size-4/6 mx-0 my-4">
+            <img
+              class="inline size-7"
+              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.17 PM.png"
+              alt=""
+            />
+
+            <span class="not-italic text-left text-l">EpanetDemo</span>
+          </button>
+          <button class="flex justify-start size-4/6 mx-0 my-4">
+            <img
+              class="inline size-7"
+              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.25 PM.png"
+              alt=""
+            />
+
+            <span class="not-italic text-left text-l">EpanetDemo</span>
+          </button>
+          <button class="flex justify-start size-4/6 mx-0 my-4">
+            <img
+              class="inline size-7"
+              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.31 PM.png"
+              alt=""
+            />
+
+            <span class="not-italic text-left text-l">EpanetDemo</span>
+          </button>
+
+          <button class="flex justify-start size-4/6 mx-0 my-4">
+            <img
+              class="inline size-7"
+              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.38 PM.png"
+              alt=""
+            />
+
+            <span class="not-italic text-left text-l">EpanetDemo</span>
+          </button>
+
+          <div v-if="list1" class="mx-2 py-2 border-b bg-white">
+            <a
+              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
+              >Epanet Demo</a
+            >
+            <a
+              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
+              >Mobail View</a
+            >
+            <a
+              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
+              >Default View</a
+            >
+          </div>
+
+          <div v-if="list2" class="mx-2 py-2 border-b bg-white">
+            <a
+              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
+              >Epanet Demo</a
+            >
+            <a
+              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
+              >Mobail View</a
+            >
+            <a
+              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
+              >Default View</a
+            >
+          </div>
+        </div>
+
+        <div class="left-2 absolute top-96 my-16">
+          <span class="p-3 text-xl rounded-full bg-stone-200 text-blue-500"
+            >FR</span
+          >
+          <img
+            class="inline size-7 m-6"
+            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-31 at 12.57.02 AM.png"
+            alt=""
+          />
+        </div>
+      </div>
     </div>
-  </div>
-   <!-- 
- one sub menu 
-   --> 
-  
- 
+  </body>
 </template>
+
 <script>
-export default{
-  data(){
-    return {isVisble: false,};
+export default {
+  data() {
+    return {
+      menu: false,
+      list1: false,
+      list2: false,
+    };
   },
   methods: {
-    toggleVisiblity(){
-      this.isVisble = !this.isVisble ;
-    }
-  }
+    subone() {
+      this.list1 = !this.list1;
+    },
+    subtwo() {
+      this.list2 = !this.list2;
+    },
+    toggleSidebar() {
+      this.menu = !this.menu;
+    },
+  },
 };
 </script>

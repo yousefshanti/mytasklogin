@@ -16,6 +16,7 @@
             src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.32.42 PM.png"
             alt=""
           />
+          <Icon  name="inbox" ></Icon>
           <img
             class="size-7 mx-0 my-4"
             src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.32.49 PM.png"
@@ -53,7 +54,7 @@
           />
         </div>
 
-        <div class="left-2 absolute bottom-2 ">
+        <div class="left-2 absolute bottom-2">
           <span class="p-3 text-xl rounded-full bg-stone-200 text-blue-500"
             >FR</span
           >
@@ -85,10 +86,9 @@
           </button>
         </div>
 
-          <!--sub-menu-->
+        <!--sub-menu-->
 
-      
-        <div class="absolute top-14  left-4  w-4/5 border-b-2 border-gray-200">
+        <div class="absolute top-14 left-4 w-4/5 border-b-2 border-gray-200">
           <button @click="subone" class="flex justify-start size-4/6 mx-0 my-4">
             <img
               class="inline size-7"
@@ -112,7 +112,6 @@
               >Default View</a
             >
           </div>
-
 
           <button @click="subtwo" class="flex justify-start size-4/6 mx-0 my-4">
             <img
@@ -184,7 +183,7 @@
             <span class="not-italic text-left text-l">EpanetDemo</span>
           </button>
 
-          <button class="flex justify-start size-4/6 mx-0 my-4 ">
+          <button class="flex justify-start size-4/6 mx-0 my-4">
             <img
               class="inline size-7"
               src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.38 PM.png"
@@ -192,9 +191,8 @@
             />
             <span class="not-italic text-left text-l">EpanetDemo</span>
           </button>
-          
-            </div>
-            <div class="absolute w-full bottom-2 left-4"> 
+        </div>
+        <div class="absolute w-full bottom-2 left-4">
           <span class="p-3 text-xl rounded-full bg-stone-200 text-blue-500"
             >FR</span
           >
@@ -203,22 +201,20 @@
             src="/Users/yousefshanti/Desktop/Screenshot 2024-07-31 at 12.57.02 AM.png"
             alt=""
           />
-          </div>  
-          
+         
         </div>
-
-       
       </div>
-   
+    </div>
   </body>
 </template>
 
 <script>
+import  Icon  from '/Users/yousefshanti/Desktop/my task/task/src/icon.vue';
 export default {
   data() {
     return {
       menu: false,
-      list1: false,
+      list1: false, 
       list2: false,
     };
   },
@@ -232,6 +228,11 @@ export default {
     toggleSidebar() {
       this.menu = !this.menu;
     },
+    component:{
+    Icon
   },
+},
+
+
 };
 </script>

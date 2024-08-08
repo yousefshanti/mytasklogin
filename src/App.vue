@@ -1,66 +1,35 @@
 <template>
-  <!-- Main Menu -->
   <body class="h-screen bg-stone-200">
     <div class="gap-y-2 absolute inset-y-0 left-0 w-16 bg-white">
-      <div class="">
+      <div>
         <button @click="toggleSidebar" class="size-10 m-4 absolute">
           <img
             class="border-b-2 border-gray-200 object-cover"
-            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 1.46.58 PM.png"
+            src="path/to/icon1.png"
             alt=""
           />
         </button>
         <div class="absolute top-14 border-b-2 left-4 border-gray-200">
+          <Icon class="size-7 mx-0 my-4" icon-code="Home"></Icon>
+          <Icon class="size-7 mx-0 my-4" icon-code="Settings"></Icon>
           <img
             class="size-7 mx-0 my-4"
-            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.32.42 PM.png"
-            alt=""
-          />
-          <Icon  name="inbox" ></Icon>
-          <img
-            class="size-7 mx-0 my-4"
-            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.32.49 PM.png"
+            src="path/to/icon2.png"
             alt=""
           />
           <img
             class="size-7 mx-0 my-4"
-            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.00 PM.png"
+            src="path/to/icon3.png"
             alt=""
           />
-          <img
-            class="size-7 mx-0 my-4"
-            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.09 PM.png"
-            alt=""
-          />
-          <img
-            class="size-7 mx-0 my-4"
-            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.17 PM.png"
-            alt=""
-          />
-          <img
-            class="size-7 mx-0 my-4"
-            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.25 PM.png"
-            alt=""
-          />
-          <img
-            class="size-7 mx-0 my-4"
-            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.31 PM.png"
-            alt=""
-          />
-          <img
-            class="size-7 mx-0 my-4"
-            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.38 PM.png"
-            alt=""
-          />
+          <!-- Add more icon wrappers or images as needed -->
         </div>
 
         <div class="left-2 absolute bottom-2">
-          <span class="p-3 text-xl rounded-full bg-stone-200 text-blue-500"
-            >FR</span
-          >
+          <span class="p-3 text-xl rounded-full bg-stone-200 text-blue-500">FR</span>
           <img
             class="size-7 m-2 my-6"
-            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-31 at 12.57.02 AM.png"
+            src="path/to/icon4.png"
             alt=""
           />
         </div>
@@ -71,137 +40,49 @@
           <button @click="toggleSidebar" class="flex justify-start size-5/6">
             <img
               class="inline h-12 w-10"
-              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 1.46.58 PM.png"
+              src="path/to/icon1.png"
               alt=""
             />
-            <span
-              class="not-italic text-left justify-center items-center text-2xl text-blue-500"
-              >flowess</span
-            >
+            <span class="not-italic text-left justify-center items-center text-2xl text-blue-500">flowess</span>
             <img
               class="absolute inline size-6 right-0 top-2"
-              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 2.21.54 PM.png"
+              src="path/to/icon5.png"
               alt=""
             />
           </button>
         </div>
 
-        <!--sub-menu-->
-
+        <!-- sub-menu -->
         <div class="absolute top-14 left-4 w-4/5 border-b-2 border-gray-200">
           <button @click="subone" class="flex justify-start size-4/6 mx-0 my-4">
-            <img
-              class="inline size-7"
-              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.32.42 PM.png"
-              alt=""
-            />
-            <span class="not-italic text-left text-l"> EpanetDemo</span>
+            <Icon class="inline size-7" icon-code="Demo"></Icon>
+            <span class="not-italic text-left text-l">EpanetDemo</span>
           </button>
-
           <div v-if="list1" class="mx-2 py-2 border-b bg-white">
-            <a
-              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
-              >Epanet Demo</a
-            >
-            <a
-              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
-              >Mobail View</a
-            >
-            <a
-              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
-              >Default View</a
-            >
+            <a class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Epanet Demo</a>
+            <a class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Mobile View</a>
+            <a class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Default View</a>
           </div>
 
           <button @click="subtwo" class="flex justify-start size-4/6 mx-0 my-4">
-            <img
-              class="inline size-7"
-              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.32.49 PM.png"
-              alt=""
-            />
-
+            <Icon class="inline size-7" icon-code="Demo"></Icon>
             <span class="not-italic text-left text-l">EpanetDemo</span>
           </button>
           <div v-if="list2" class="mx-2 py-2 border-b bg-white">
-            <a
-              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
-              >Epanet Demo</a
-            >
-            <a
-              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
-              >Mobail View</a
-            >
-            <a
-              class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"
-              >Default View</a
-            >
+            <a class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Epanet Demo</a>
+            <a class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Mobile View</a>
+            <a class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Default View</a>
           </div>
-          <button class="flex justify-start size-4/6 mx-0 my-4">
-            <img
-              class="inline size-7"
-              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.00 PM.png"
-              alt=""
-            />
-
-            <span class="not-italic text-left text-l">EpanetDemo</span>
-          </button>
-
-          <button class="flex justify-start size-4/6 mx-0 my-4">
-            <img
-              class="inline size-7"
-              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.09 PM.png"
-              alt=""
-            />
-
-            <span class="not-italic text-left text-l">EpanetDemo</span>
-          </button>
-          <button class="flex justify-start size-4/6 mx-0 my-4">
-            <img
-              class="inline size-7"
-              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.17 PM.png"
-              alt=""
-            />
-
-            <span class="not-italic text-left text-l">EpanetDemo</span>
-          </button>
-          <button class="flex justify-start size-4/6 mx-0 my-4">
-            <img
-              class="inline size-7"
-              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.25 PM.png"
-              alt=""
-            />
-
-            <span class="not-italic text-left text-l">EpanetDemo</span>
-          </button>
-          <button class="flex justify-start size-4/6 mx-0 my-4">
-            <img
-              class="inline size-7"
-              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.31 PM.png"
-              alt=""
-            />
-
-            <span class="not-italic text-left text-l">EpanetDemo</span>
-          </button>
-
-          <button class="flex justify-start size-4/6 mx-0 my-4">
-            <img
-              class="inline size-7"
-              src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 8.33.38 PM.png"
-              alt=""
-            />
-            <span class="not-italic text-left text-l">EpanetDemo</span>
-          </button>
+          
+          <!-- Add more buttons as needed -->
         </div>
         <div class="absolute w-full bottom-2 left-4">
-          <span class="p-3 text-xl rounded-full bg-stone-200 text-blue-500"
-            >FR</span
-          >
+          <span class="p-3 text-xl rounded-full bg-stone-200 text-blue-500">FR</span>
           <img
             class="inline size-7 m-6"
-            src="/Users/yousefshanti/Desktop/Screenshot 2024-07-31 at 12.57.02 AM.png"
+            src="path/to/icon6.png"
             alt=""
           />
-         
         </div>
       </div>
     </div>
@@ -209,7 +90,8 @@
 </template>
 
 <script>
-import  Icon  from '/Users/yousefshanti/Desktop/my task/task/src/icon.vue';
+import Icon from '@/components/Icon.vue';
+
 export default {
   data() {
     return {
@@ -228,11 +110,13 @@ export default {
     toggleSidebar() {
       this.menu = !this.menu;
     },
-    component:{
-    Icon
   },
-},
-
-
+  components: {
+    Icon
+  }
 };
 </script>
+
+<style>
+/* Add any necessary styles */
+</style>

@@ -3,11 +3,11 @@
     <div class="gap-y-2 absolute inset-y-0 left-0 w-16 bg-white">
       <div>
         <button @click="toggleSidebar" class="size-10 m-4 absolute">
-          <img
+         <!--<img
             class="border-b-2 border-gray-200 object-cover"
             src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 1.46.58 PM.png"
             alt=""
-          />
+          />--> 
         </button>
         <div class="absolute top-14 border-b-2 left-4 border-gray-200">
           <Icon class="mx-0 my-4 size-6" icon="mdi:home" />
@@ -31,11 +31,11 @@
       <div v-if="menu" class="absolute inset-y-0 left-0 w-56 bg-white">
         <div class="absolute m-4 w-10/12 border-b border-gray-300">
           <button @click="toggleSidebar" class="flex justify-start size-5/6">
-            <img
+           <!--<img
               class="inline h-12 w-10"
               src="/Users/yousefshanti/Desktop/Screenshot 2024-07-30 at 1.46.58 PM.png"
               alt=""
-            />
+            />--> 
             <span
               class="not-italic text-left justify-center items-center text-2xl text-blue-500"
               >flowess</span

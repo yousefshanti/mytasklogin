@@ -10,9 +10,9 @@
           />
         </button>
         <div class="absolute top-14 border-b-2 left-4 border-gray-200">
-          <Icon class="mx-0 my-4" icon-code="icon1" />
-          <Icon class="mx-0 my-4" icon-code="icon2" />
-          <Icon class="mx-0 my-4" icon-code="icon3" />
+          <Icon class="mx-0 my-4 size-6" icon="mdi:home" />
+          <Icon class="mx-0 my-4 size-6" icon="" />
+          <Icon class="mx-0 my-4" icon-code="mdi:home" />
           <Icon class="mx-0 my-4" icon-code="icon4" />
           <Icon class="mx-0 my-4" icon-code="icon5" />
           <Icon class="mx-0 my-4" icon-code="icon6" />
@@ -137,8 +137,8 @@
 </template>
 
 <script>
-import Icon from "@/components/icon.vue";
-
+//import Icon from "@/components/icon.vue";
+import { Icon } from "@iconify/vue";
 export default {
   data() {
     return {
@@ -163,7 +163,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/* Add any necessary styles */
-</style>

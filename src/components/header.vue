@@ -11,9 +11,9 @@
   
   </template>
   
-  <script>
+  <script lang="ts">
   import { Icon } from "@iconify/vue";
-  import IconWrapper from "./components/icons/icon-wrapper.vue";
+  import IconWrapper from "./icons/icon-wrapper.vue";
   export default {
     name: 'Header',
     props: {

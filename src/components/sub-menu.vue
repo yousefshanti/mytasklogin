@@ -1,5 +1,6 @@
 <template>
-  <div class="gap-y-2 absolute inset-y-0 left-0 w-16 bg-white">
+
+  <div class="gap-y-2 absolute inset-y-0 left-0 w-16 bg-white flex">
     <div>
       <button @click="toggleSidebar" class="size-10 m-4 absolute">
         <img
@@ -8,6 +9,13 @@
           alt=""
         />
       </button>
+     
+        <div :class="[isExpanded ? 'ml-40' : 'ml-1']" class="ml">
+      <HeaderComponent :isExpanded="isExpanded" title="Dashboard"  />
+      <!-- Other content goes here -->
+    </div>
+ 
+      
       <div class="absolute top-16 border-b-2 left-4 border-gray-200">
         <IconWrapper
           class="size-6 mx-1 my-4"
@@ -60,8 +68,9 @@
           icon-Code="streamline:login-1"
         ></IconWrapper>
       </div>
+      
     </div>
-
+   
     <div v-if="menu" class="absolute inset-y-0 left-0 w-56 bg-white">
       <div class="absolute m-4 w-10/12 border-b-2 border-gray-200">
         <button @click="toggleSidebar" class="flex justify-start size-5/6">
@@ -259,19 +268,23 @@
           icon-Code="streamline:login-1"
         ></IconWrapper>
       </div>
-    </div>
+       </div>
+    
   </div>
+  
 </template>
 
-<script>
+<script lang="ts">
+import HeaderComponent from "./header.vue";
 import { Icon } from "@iconify/vue";
-import IconWrapper from "./icon-wrapper.vue";
-import Slider from "./slider.vue";
-
-export default {
+import IconWrapper from "./icons/icon-wrapper.vue";
+import Slider from "./icons/slider.vue";
+import { defineComponent } from 'vue';
+export default defineComponent({
   name: "Submenu",
   data() {
     return {
+      isExpanded: false, // Initial state for the width
       menu: false,
       list1: false,
       list2: false,
@@ -286,12 +299,16 @@ export default {
     },
     toggleSidebar() {
       this.menu = !this.menu;
+      this.isExpanded = !this.isExpanded;
     },
+    //toggleWidth() {
+      //this.isExpanded = !this.isExpanded;
+    //},
   },
   components: {
     Icon,
     IconWrapper,
-    Slider,
+    Slider,HeaderComponent
   },
-};
+});
 </script>

@@ -5,7 +5,9 @@
               icon-Code="icon-park-outline:waterfalls-v"
             ></IconWrapper>
   <Headercomponent  title="Dashboard" class="" />
+    <span class=" text-balance font-mono absolute  text m-10 w-80 text-xl">this is Dashboard page</span>
   </div>
+  
 </template>
 
 <script>

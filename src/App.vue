@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HeaderComponent from './components/header.vue';
+import HeaderComponent from './components/Dashboard.vue';
 import subMenu from './components/sub-menu.vue';
 export default defineComponent({
   name: 'App',

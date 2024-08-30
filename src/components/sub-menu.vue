@@ -1,7 +1,8 @@
 <template>
 
   <div class="gap-y-2 absolute inset-y-0 left-0 w-16 bg-white flex">
-    <div>
+    <div >
+      <div> </div>
       <button @click="toggleSidebar" class="size-10 m-4 absolute">
         <img
           class="border-b-2 border-gray-200 object-cover"
@@ -9,13 +10,13 @@
           alt=""
         />
       </button>
+     <div :class="[isExpanded ? 'ml-40' : 'ml-1']" class="flex-1 transition-all duration-300 bg-gray-100">
+      <component :is="wrapper" >
      
-        <div :class="[isExpanded ? 'ml-40' : 'ml-1']" class="ml">
-      <HeaderComponent :isExpanded="isExpanded" title="Dashboard"  />
-      <!-- Other content goes here -->
-    </div>
- 
-      
+     </component>
+     </div>
+     
+     
       <div class="absolute top-16 border-b-2 left-4 border-gray-200">
         <IconWrapper
           class="size-6 mx-1 my-4"
@@ -94,22 +95,25 @@
       <div
         class="absolute top-16 left-2 my-4 pb-4 space-y-3.5 w-4/5 border-b-2 border-gray-200"
       >
-        <button>
+        <button  @click="wrapper = 'Dashboard'">
           <IconWrapper
             class="size-6 mx-3 inline"
             icon-Code="icon-park-outline:waterfalls-v"
           ></IconWrapper>
           <span class="not-italic text-left text-l">Dashboard</span>
         </button>
-
-        <button>
+       
+      
+        <button @click="wrapper = 'WaterQuality'">
           <IconWrapper
             class="size-6 mx-3 inline"
             icon-Code="mynaui:drop"
           ></IconWrapper>
           <span class="not-italic text-left text-l">Water Quality</span>
         </button>
-
+     
+      
+       
         <button @click="subone">
           <IconWrapper
             class="size-6 mx-3 inline"
@@ -275,20 +279,25 @@
 </template>
 
 <script lang="ts">
-import HeaderComponent from "./header.vue";
+
 import { Icon } from "@iconify/vue";
 import IconWrapper from "./icons/icon-wrapper.vue";
 import Slider from "./icons/slider.vue";
 import { defineComponent } from 'vue';
+import Dashboard from "./Dashboard.vue";
+import WaterQuality from "./WaterQuality.vue"
 export default defineComponent({
   name: "Submenu",
   data() {
     return {
+      dash: false,
       isExpanded: false, // Initial state for the width
       menu: false,
       list1: false,
       list2: false,
       arro: false,
+      water: false,
+      wrapper: "",
     };
   },
   methods: {
@@ -301,14 +310,17 @@ export default defineComponent({
       this.menu = !this.menu;
       this.isExpanded = !this.isExpanded;
     },
-    //toggleWidth() {
-      //this.isExpanded = !this.isExpanded;
-    //},
+    Dash() {
+      this.dash = !this.dash;
+    },
+    Water() {
+      this.water = !this.water;
+    },
   },
   components: {
     Icon,
     IconWrapper,
-    Slider,HeaderComponent
+    Slider,Dashboard,WaterQuality
   },
 });
 </script>

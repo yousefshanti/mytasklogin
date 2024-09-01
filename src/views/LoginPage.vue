@@ -9,6 +9,7 @@
         <form action="">
           <div>
             <input
+              v-model="ID"
               class="w-4/5 mt-3 mb-0 outline-none border-b border-gray-300 focus-within:border-blue-600 border-gray-30"
               type="text"
               name="ID"
@@ -16,6 +17,7 @@
               required
             />
             <input
+              v-model="username"
               class="w-4/5 mt-3 mb-0 outline-none border-b border-gray-300 focus-within:border-blue-600"
               type="email"
               name="email"
@@ -23,6 +25,7 @@
               required
             />
             <input
+              v-model="pass"
               class="w-4/5 mt-3 mb-0 outline-none border-b border-gray-300 focus-within:border-blue-600"
               type="password"
               name="password"
@@ -30,13 +33,16 @@
               required
             />
           </div>
-          <div class="text-blue-600 no-underline text-sm">
-            <button
-              @click="redirect()"
+          <div  class="text-blue-600 no-underline text-sm" >
+            <router-link to="/menu">
+              <button
+              :disabled="!ID||!username||!pass"
               class="bg-white my-6 mx-auto absolute left-[6%] py-[5px] px-[120px] border border-blue-600 text-blue-600 rounded-md"
             >
               LOG IN
             </button>
+    </router-link>
+            
   
             <button class="absolute bottom-0 left-5 h-16 w-30">
               CONTACT SUPPORT
@@ -57,6 +63,15 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Login',
+  data(){
+   return {
+    ID :null,
+    username :null,
+    pass:null,
+   };
+   
+
+  },
 });
 </script>
 

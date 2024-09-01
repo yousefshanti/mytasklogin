@@ -1,10 +1,16 @@
 <template>
     <div>
-      <!-- This link will navigate to the LogoutButton page -->
-      <RouterLink to="/logout" class="text-blue-500 hover:underline">
+      <router-link to="/">
+      <button  class="underline hover:text-blue-500">
         Logout
-      </RouterLink>
+      </button>
+    </router-link>
+      <!-- This link will navigate to the LogoutButton page<RouterLink to="/" class="text-blue-500 hover:underline">
+       
+      </RouterLink> -->
+      
     </div>
+    
   </template>
   
   <script lang="ts">

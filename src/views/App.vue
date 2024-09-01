@@ -1,7 +1,8 @@
 <template>
  
   <div class="h-screen bg-stone-200 flex">
-   <subMenu/>
+    
+    <router-view></router-view>
    
   </div>
   

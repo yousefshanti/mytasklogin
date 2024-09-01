@@ -1,6 +1,6 @@
 import {  createRouter, createWebHistory  } from "vue-router";
-import Logout from "../components/logoutbutton.vue";
-import App from "@/views/App.vue";
+import Login from "../views/LoginPage.vue";
+import subMenu from '../components/sub-menu.vue';
 //Vue.component('icon',require('./src/icon').default);
 
 const router = createRouter({
@@ -8,13 +8,13 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "App",
-      component: App,
+      name: "Login",
+      component: Login,
     },
     {
-      path: "/logout",
-      name: "logout",
-      component: Logout,
+      path: "/menu",
+      name: "menu",
+      component: subMenu,
     },
    
   ],

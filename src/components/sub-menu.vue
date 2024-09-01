@@ -98,24 +98,7 @@
       <div
         class="absolute top-16 left-2 my-4 pb-4 space-y-3.5 w-4/5 border-b-2 border-gray-200"
       >
-       <!-- <button  @click="wrapper = 'Pages'">
-          <IconWrapper
-            class="size-6 mx-3 inline"
-            icon-Code="icon-park-outline:waterfalls-v"
-          ></IconWrapper>
-          <span class="not-italic text-left text-l">Dashboard</span>
-        </button>
-       
       
-        <button @click="wrapper = 'Pages' ">
-          <IconWrapper
-            class="size-6 mx-3 inline"
-            icon-Code="mynaui:drop"
-          ></IconWrapper>
-          <span class="not-italic text-left text-l">Water Quality</span>
-        </button>
-     
-      -->
       <button @click="choose('option1')" :class="[activeChoice === 'option1' ? '' : '']"
       >
           <IconWrapper
@@ -312,8 +295,6 @@ import Slider from "./icons/slider.vue";
 import { defineComponent } from 'vue';
 import Pages from "./Pages.vue";
 import Logout from "./logoutbutton.vue"
-import Dashboard from "./Dashboard.vue";
-
 
 export default defineComponent({
   name: "Submenu",
@@ -327,18 +308,11 @@ export default defineComponent({
       list2: false,
       arro: false,
       wrapper: "",
-      dash: false,
-      water: false,
       slide: false
     };
   },
   methods: {
-    Dash(){
-      this.dash=!this.dash
-    },
-    Water(){
-      this.water=!this.water
-    },
+    
     subone() {
       this.list1 = !this.list1;
       this.arro = !this.arro;

@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-
+import {  createRouter, createWebHistory  } from "vue-router";
+import Logout from "../components/logoutbutton.vue";
+import App from "@/views/App.vue";
 //Vue.component('icon',require('./src/icon').default);
 
 const router = createRouter({
@@ -8,18 +8,17 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "home",
-      component: HomeView,
+      name: "App",
+      component: App,
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/AboutView.vue"),
+      path: "/logout",
+      name: "logout",
+      component: Logout,
     },
+   
   ],
+  
 });
 
 export default router;

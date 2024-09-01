@@ -10,12 +10,13 @@
           alt=""
         />
       </button>
-     <div :class="[isExpanded ? 'ml-40' : 'ml-1']" class="flex-1 transition-all duration-300 bg-gray-100">
-      <component :is="wrapper" >
      
-     </component>
+     <div :class="[isExpanded ? 'ml-40' : 'ml-1']" class="flex-1 transition-all duration-300 bg-gray-100" PageCode="Dashboard"> 
+      <Pages v-if="activeChoice === 'option1'" PageCode="Dashboard" />
      </div>
-     
+     <div :class="[isExpanded ? 'ml-40' : 'ml-1']" class="flex-1 transition-all duration-300 bg-gray-100" PageCode="Dashboard"> 
+      <Pages v-if="activeChoice === 'option2'" PageCode="WaterQuality" />
+     </div>
      
       <div class="absolute top-16 border-b-2 left-4 border-gray-200">
         <IconWrapper
@@ -61,9 +62,11 @@
       </div>
 
       <div class="left-2 absolute bottom-2">
-        <span class="p-3 text-xl rounded-full bg-stone-200 text-blue-500"
-          >FR</span
-        >
+       
+        <IconWrapper
+          class="absolute size-10 bottom-20  text-blue-500"
+          icon-Code="bi:person-circle"
+        ></IconWrapper>
         <IconWrapper
           class="size-6 mx-3 my-6"
           icon-Code="streamline:login-1"
@@ -95,7 +98,7 @@
       <div
         class="absolute top-16 left-2 my-4 pb-4 space-y-3.5 w-4/5 border-b-2 border-gray-200"
       >
-        <button  @click="wrapper = 'Dashboard'">
+       <!-- <button  @click="wrapper = 'Pages'">
           <IconWrapper
             class="size-6 mx-3 inline"
             icon-Code="icon-park-outline:waterfalls-v"
@@ -104,7 +107,7 @@
         </button>
        
       
-        <button @click="wrapper = 'WaterQuality'">
+        <button @click="wrapper = 'Pages' ">
           <IconWrapper
             class="size-6 mx-3 inline"
             icon-Code="mynaui:drop"
@@ -112,7 +115,24 @@
           <span class="not-italic text-left text-l">Water Quality</span>
         </button>
      
-      
+      -->
+      <button @click="choose('option1')" :class="[activeChoice === 'option1' ? '' : '']"
+      >
+          <IconWrapper
+            class="size-6 mx-3 inline"
+            icon-Code="icon-park-outline:waterfalls-v"
+          ></IconWrapper>
+          <span class="not-italic text-left text-l">Dashboard</span>
+        </button>
+
+        
+        <button @click="choose('option2')" :class="[activeChoice === 'option2' ?'' : '' ]" >
+          <IconWrapper
+            class="size-6 mx-3 inline"
+            icon-Code="mynaui:drop"
+          ></IconWrapper>
+          <span class="not-italic text-left text-l">Water Quality</span>
+        </button>
        
         <button @click="subone">
           <IconWrapper
@@ -131,7 +151,7 @@
             icon-Code="ep:arrow-right-bold"
           ></IconWrapper>
         </button>
-
+        
         <div v-if="list1" class="mx-2 py-2 border-b-2 bg-white">
           <Slider />
         </div>
@@ -262,16 +282,22 @@
           ></IconWrapper>
         </button>
       </div>
-      <div class="absolute w-full bottom-12 left-3">
-        <span
-          class="absolute bottom-3 p-3 text-xl rounded-full bg-stone-200 text-blue-500"
-          >FR</span
-        >
+
+      <button @click="toggleRotation" class="absolute w-full bottom-12 left-3">
         <IconWrapper
-          class="absolute right-12 bottom-6 m-0 size-6"
-          icon-Code="streamline:login-1"
+          class="absolute size-10 bottom-4  text-blue-500"
+          icon-Code="bi:person-circle"
         ></IconWrapper>
-      </div>
+      
+        <IconWrapper
+           :class="rotationClass"
+            class="absolute right-12 bottom-6 m-0 size-6"
+            icon-Code="ep:arrow-right-bold"
+          ></IconWrapper>
+      </button>
+      <div v-if="slide" class="">
+          <Logout class="mx-2 py-2 border-b-2 bg-white absolute right-12 bottom-6"/>
+        </div>
        </div>
     
   </div>
@@ -284,23 +310,35 @@ import { Icon } from "@iconify/vue";
 import IconWrapper from "./icons/icon-wrapper.vue";
 import Slider from "./icons/slider.vue";
 import { defineComponent } from 'vue';
+import Pages from "./Pages.vue";
+import Logout from "./logoutbutton.vue"
 import Dashboard from "./Dashboard.vue";
-import WaterQuality from "./WaterQuality.vue"
+
+
 export default defineComponent({
   name: "Submenu",
   data() {
     return {
-      dash: false,
+      activeChoice: 'option1',
+      isRotated: false,
       isExpanded: false, // Initial state for the width
       menu: false,
       list1: false,
       list2: false,
       arro: false,
-      water: false,
       wrapper: "",
+      dash: false,
+      water: false,
+      slide: false
     };
   },
   methods: {
+    Dash(){
+      this.dash=!this.dash
+    },
+    Water(){
+      this.water=!this.water
+    },
     subone() {
       this.list1 = !this.list1;
       this.arro = !this.arro;
@@ -309,18 +347,26 @@ export default defineComponent({
     toggleSidebar() {
       this.menu = !this.menu;
       this.isExpanded = !this.isExpanded;
+      
     },
-    Dash() {
-      this.dash = !this.dash;
+    toggleRotation(){
+      this.slide=!this.slide
+      this.isRotated = !this.isRotated;
     },
-    Water() {
-      this.water = !this.water;
+    choose(option: string) {
+      this.activeChoice = option
+    }
+    
+  },
+  computed: {
+    rotationClass() {
+      return this.isRotated ? 'rotate-90 transition-transform duration-300' : 'rotate-0 transition-transform duration-300';
     },
   },
   components: {
     Icon,
     IconWrapper,
-    Slider,Dashboard,WaterQuality
+    Slider,Logout,Pages,
   },
 });
 </script>

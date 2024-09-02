@@ -5,9 +5,7 @@
         Logout
       </button>
     </router-link>
-      <!-- This link will navigate to the LogoutButton page<RouterLink to="/" class="text-blue-500 hover:underline">
-       
-      </RouterLink> -->
+      
       
     </div>
     

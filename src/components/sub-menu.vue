@@ -1,3 +1,5 @@
+ <!--"/Users/yousefshanti/Desktop/my task/Screenshot 2024-07-30 at 1.46.58 PM.png"
+     -->
 <template>
 
   <div class="gap-y-2 absolute inset-y-0 left-0 w-16 bg-white flex">
@@ -10,7 +12,7 @@
           alt=""
         />
       </button>
-     
+    
      <div :class="[isExpanded ? 'ml-40' : 'ml-1']" class="flex-1 transition-all duration-300 bg-gray-100" PageCode="Dashboard"> 
       <Pages v-if="activeChoice === 'option1'" PageCode="Dashboard" />
      </div>
@@ -96,7 +98,7 @@
 
       <!-- sub-menu -->
       <div
-        class="absolute top-16 left-2 my-4 pb-4 space-y-3.5 w-4/5 border-b-2 border-gray-200"
+        class=" overscroll-y-auto absolute top-16 left-2 my-4 pb-4 space-y-3.5 w-4/5 border-b-2 border-gray-200"
       >
       
       <button @click="choose('option1')" :class="[activeChoice === 'option1' ? '' : '']"
@@ -135,7 +137,11 @@
           ></IconWrapper>
         </button>
         
-        <div v-if="list1" class="mx-2 py-2 border-b-2 bg-white">
+        <div v-if="list1" class="overflow-y-auto  mx-2 py-2 border-b-2 bg-white">
+          <Slider />
+          <Slider />
+          <Slider />
+          <Slider />
           <Slider />
         </div>
 

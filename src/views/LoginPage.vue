@@ -34,14 +34,15 @@
             />
           </div>
           <div  class="text-blue-600 no-underline text-sm" >
-            <router-link to="/menu">
+            
               <button
+              @click="login"
               :disabled="!ID||!username||!pass"
               class="bg-white my-6 mx-auto absolute left-[6%] py-[5px] px-[120px] border border-blue-600 text-blue-600 rounded-md"
             >
               LOG IN
             </button>
-    </router-link>
+    
             
   
             <button class="absolute bottom-0 left-5 h-16 w-30">
@@ -60,18 +61,38 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
   name: 'Login',
-  data(){
-   return {
-    ID :null,
-    username :null,
-    pass:null,
-   };
-   
-
+  data() {
+    return {
+      ID: null as number | null,            // Assuming ID is a number, adjust the type if different
+      username: null as string | null,      // Username as a string, starting as null
+      pass: null as string | null,          // Password as a string, starting as null
+    };
   },
+  methods: {
+    login() {
+      // Perform login logic here, such as API calls to verify credentials
+      if (this.username && this.pass) {
+        // For demonstration, we'll assume a simple check
+        if (this.username === 'admin@a' && this.pass === 'pass') {
+          // Example logic: store token in localStorage
+          localStorage.setItem('authToken', 'dummyToken'); // Replace with a real token from your API
+          
+          // Navigate to the menu page after successful login
+          const router = useRouter();
+          router.push('/menu');
+        } else {
+          alert('Invalid username or password'); // Simple feedback
+        }
+      } else {
+        alert('Please enter username and password'); // Ensure fields are not empty
+      }
+    }
+  }
 });
 </script>
+
 

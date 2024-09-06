@@ -1,13 +1,11 @@
 <template>
-    <div>
-    <div class="absolute  text-center text-5xl ">Not found</div>
-    </div>
+  <div>
+    <div class="absolute text-center text-5xl">Not found</div>
+  </div>
 </template>
 
 <script lang="ts">
- export default{
-    name:"Notfound"
-}
-
+export default {
+  name: "Notfound",
+};
 </script>
-

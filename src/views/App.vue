@@ -1,20 +1,16 @@
 <template>
- 
   <div class="h-screen bg-stone-200 flex">
-    
-    <router-view></router-view>
-   
+  <tableview/>
   </div>
-  
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import subMenu from '../components/sub-menu.vue';
+import { defineComponent } from "vue";
+import subMenu from "../components/sub-menu.vue";
+import tableview from "../components/table-view.vue"
 
 export default defineComponent({
-  name: 'App',
-  components: { subMenu },
-  
+  name: "App",
+  components: { subMenu,tableview, },
 });
 </script>

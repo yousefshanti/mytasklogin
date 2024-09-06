@@ -7,20 +7,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { useRouter } from 'vue-router';
+import { defineComponent } from "vue";
+import { useRouter } from "vue-router";
 
 export default defineComponent({
-  name: 'Logout',
+  name: "Logout",
   setup() {
     const router = useRouter();
 
     // Define the logout function
     const logout = () => {
       // Clear the authentication token
-      localStorage.removeItem('authToken');
+      localStorage.removeItem("authToken");
       // Redirect to login page
-      router.push('/'); // Redirects to the login page
+      router.push("/"); // Redirects to the login page
     };
 
     return {

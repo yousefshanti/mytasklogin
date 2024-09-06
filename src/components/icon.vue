@@ -121,7 +121,6 @@
 
 <script>
 export default {
-
   props: {
     iconCode: {
       type: String,

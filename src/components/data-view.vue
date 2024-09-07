@@ -1,8 +1,7 @@
 <template>
-  <div class="flex items-stretch gap-96 w-screen text-blue-600 p-3">
-    <div >{{ time }}</div>
-    <div>{{ label }}</div>
-    <div>{{ value }}</div>
+  <div class="flex items-stretch gap-x-96 w-screen text-blue-600 p-3">
+    <!-- Dynamically render all props passed to the component -->
+    <div v-for="(value, key) in cellData" :key="key">{{ value }}</div>
   </div>
 </template>
 
@@ -12,18 +11,8 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "Cell",
   props: {
-    valu: String,
-    dataType:[],
-    time: {
-      type: String,
-      required: true,
-    },
-    label: {
-      type: String,
-      required: true,
-    },
-    value: {
-      type: String,
+    cellData: {
+      type: Object,
       required: true,
     },
   },

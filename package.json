@@ -11,7 +11,9 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "chart.js": "^4.4.4",
     "jw-paginate": "^1.0.4",
+    "mapbox-gl": "^3.6.0",
     "unplugin-icons": "^0.19.2",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"

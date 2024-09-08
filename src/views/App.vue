@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen bg-stone-200 flex">
-  <tableview/>
+  <chart/>
   </div>
 </template>
 
@@ -8,9 +8,9 @@
 import { defineComponent } from "vue";
 import subMenu from "../components/sub-menu.vue";
 import tableview from "../components/table-view.vue"
-
+import chart from "../components/chart.vue";
 export default defineComponent({
   name: "App",
-  components: { subMenu,tableview, },
+  components: { subMenu,tableview,chart },
 });
 </script>

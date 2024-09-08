@@ -8,13 +8,12 @@
   import { onMounted } from 'vue';
   import { Chart, registerables } from 'chart.js';
   
-  // Register the necessary Chart.js components
   Chart.register(...registerables);
   
   onMounted(() => {
     const ctx = document.getElementById('myChart');
   
-    // Initialize the chart
+  
     const myChart = new Chart(ctx, {
       type: 'line',
       data: {

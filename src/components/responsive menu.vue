@@ -1,11 +1,11 @@
 <!--"/Users/yousefshanti/Desktop/my task/Screenshot 2024-07-30 at 1.46.58 PM.png"
      -->
      <template>
-        <div class="absolute  left-7 w-1/4">
-          <div class="md:flex justify-between p-1  bg-sky-600 h-14">
+        <div class="absolute  w-96">
+          <div class="flex justify-between   bg-sky-600 h-14">
           
               <img
-                class="border-b-2 size-10  object-cover ml-40"
+                class=" size-13  object-cover ml-40"
                 src="/Users/yousefshanti/Desktop/my task/Screenshot 2024-09-10 at 12.43.50 AM.png"
                 alt=""
               />
@@ -14,7 +14,7 @@
               <Pages v-if="activeChoice === 'option1'" PageCode="Dashboard" />-->
               <button @click="toggleSidebar">
                 <IconWrapper
-                  class="text-white  inline size-7"
+                  class="text-white m-3 size-7"
                   icon-Code="heroicons-outline:menu-alt-3"
                 ></IconWrapper>
             </button>

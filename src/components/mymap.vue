@@ -17,7 +17,6 @@ onMounted(() => {
     zoom: 9 
   });
 
-  // Optional: Add zoom and rotation controls to the map
   map.addControl(new mapboxgl.NavigationControl());
 });
 </script>

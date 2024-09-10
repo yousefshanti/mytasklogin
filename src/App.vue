@@ -1,14 +1,16 @@
 <template>
-  <div class="h-screen bg-white flex justify-center ">
-  <MapboxMap class=" absolute top-10"/>
+  <div class="h-screen bg-stone-200 overflow-auto">
+  <MapboxMap class=" m-20"/>
+  <responsivemenu/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import MapboxMap from "./components/mymap.vue";
+import responsivemenu from "./components/responsive menu.vue";
+import Chart from "./components/chart.vue";
 export default defineComponent({
   name: "App",
-  components: { MapboxMap },
+  components: { responsivemenu,Chart },
 });
 </script>

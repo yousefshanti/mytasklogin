@@ -1,5 +1,7 @@
 <template>
-  <div id="map"  class=" w-11/12 h-5/6"></div>
+  
+    <div id="map"  class=" w-full h-96"></div>
+
 </template>
 
 <script setup>

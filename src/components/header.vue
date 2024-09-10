@@ -1,7 +1,7 @@
 <template>
-  <header>
-    <span class="font-mono absolute left-9 text-2xl">{{ title }}</span>
-  </header>
+
+    <span class="font-mono text-2xl">{{ title }}</span>
+
 </template>
 
 <script>

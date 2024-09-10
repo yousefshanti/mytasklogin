@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center m-44">
+    <div class="flex justify-center ">
       <canvas id="myChart" class=""></canvas>
     </div>
   </template>

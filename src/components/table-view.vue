@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-[99%] bg-white m-2 top-5 rounded-lg h-2/3  shadow-2xl">
+  <div class="relative w-[99%] bg-white m-2 top-2 rounded-lg h-2/3  shadow-2xl">
     <!-- Search Input -->
     <div class="p-4 flex border-b-2">
       <input
@@ -219,7 +219,7 @@ export default defineComponent({
         },
       ],
       currentPage: 1,
-      itemsPerPage: 5,
+      itemsPerPage: 10,
       hiddenColumns: [],
       isReversed: false,
       searchQuery: '', // Search query

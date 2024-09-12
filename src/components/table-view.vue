@@ -1,155 +1,112 @@
 <template>
-  <div class="absolute   w-[99%] bg-white m-2 top-5 p-3 rounded-lg  ">
-    
-      <!--flex  gap-x-96 justify-around -->
-      <div class="text-blue-600 p-2 flex gap-x-80  bg-white ">
-        
-        <th class="flex items-stretch gap-x-4 ">
-
-          Time
-          <button @click="Time">
-            <IconWrapper
-            class="text-blue-500 mt-1"
-            icon-Code="hugeicons:arrow-up-down"
-          ></IconWrapper>
+  <div class="absolute w-[99%] bg-white m-2 top-5 p-3 rounded-lg">
+    <div class="text-blue-600 p-2 flex gap-x-80 bg-white">
+      <!-- Time column with sorting buttons -->
+      <th class="flex items-stretch gap-x-4 mr-36">
+        Time
+        <div class="mt-1 flex justify-stretch">
+          <button
+            class="focus:outline-none"
+            :class="sortTime === 'asc' ? 'text-blue-700' : 'text-blue-200'"
+            @click="sort('time', 'asc')"
+          >
+            <IconWrapper icon-Code="hugeicons:arrow-up-02"></IconWrapper>
           </button>
-          
-          <IconWrapper
-            class="text-blue-500 mt-1"
-            icon-Code="ph:eye-light"
-          ></IconWrapper>
-        </th>
-       
-
-        <th class="flex items-stretch gap-x-4 ml-"
-       :class="hlabel? ' ml-20':' ml-32'"
-        >
-          Label
-          <button @click="Label">
-            <IconWrapper
-            class="text-blue-500 mt-1"
-            icon-Code="hugeicons:arrow-up-down"
-          ></IconWrapper>
+          <button
+            class="focus:outline-none"
+            :class="sortTime === 'desc' ? 'text-blue-700' : 'text-blue-200'"
+            @click="sort('time', 'desc')"
+          >
+            <IconWrapper icon-Code="hugeicons:arrow-down-02"></IconWrapper>
           </button>
-          <IconWrapper
-            class="text-blue-500 mt-1"
-            icon-Code="ph:eye-light"
-          ></IconWrapper>
-        </th>
-        <th 
-         :class="hlabel? ' ml-0':' ml-7'"
-        class="flex items-stretch gap-x-4 "
-        >
-          Value
-          <button @click="Value">
-            <IconWrapper
-            class="text-blue-500 mt-1"
-            icon-Code="hugeicons:arrow-up-down"
-          ></IconWrapper>
-          </button>
-          <IconWrapper
-            class="text-blue-500 mt-1"
-            icon-Code="ph:eye-light"
-          ></IconWrapper>
-        </th>
-        <div >
-         
         </div>
-      </div>
+        <button >
+            <IconWrapper
+            class="text-blue-500 mt-1"
+            icon-Code="ph:eye-light"
+          ></IconWrapper>
+          </button>
+      </th>
 
-      <div class="h-96 overflow-auto absolute left-0 right-0 rounded-b-lg ">
-        <div v-if="htime">
-        <tr
-          
-          v-for="(cell, index) in cells"
-          :key="index"
-          :class=" index % 2 === 0 ? 'bg-stone-200' : 'bg-white'"
-          
-        >
-          <Cell
-            :label="cell.label"
-            :value="cell.value"
-            class="ml-44"
-          />
-        </tr>
-      </div>
-
-      <div v-if="hlabel">
-        <tr
-          
-          v-for="(cell, index) in cells"
-          :key="index"
-          :class=" index % 2 === 0 ? 'bg-stone-200' : 'bg-white'"
-          
-        >
-          <Cell
-            :time="cell.time"
-            class="gap-x-96"
-            :value="cell.value  "
-          />
-        </tr>
-      </div>
-      <div v-if="hvalue">
-        <tr
-          
-          v-for="(cell, index) in cells"
-          :key="index"
-          :class=" index % 2 === 0 ? 'bg-stone-200' : 'bg-white'"
-          
-        >
-          <Cell
-            :time="cell.time"
-            :label="cell.label"
-          />
-        </tr>
-      </div>
-
-        <div v-else>
-          <tr
-          v-for="(cell, index) in cells"
-          :key="index"
-          :class=" index % 2 === 0 ? 'bg-stone-200' : 'bg-white'"
-          
-        >
-          <Cell
-            :time="cell.time"
-            :label="cell.label"
-            :value="cell.value"
-          />
-        </tr>
+      <!-- Label column with sorting buttons -->
+      <th class="flex items-stretch gap-x-4 ">
+        Label
+        <div class="mt-1 flex justify-stretch">
+          <button
+            class="focus:outline-none"
+            :class="sortLabel === 'asc' ? 'text-blue-700' : 'text-blue-200'"
+            @click="sort('label', 'asc')"
+          >
+            <IconWrapper icon-Code="hugeicons:arrow-up-02"></IconWrapper>
+          </button>
+          <button
+            class="focus:outline-none"
+            :class="sortLabel === 'desc' ? 'text-blue-700' : 'text-blue-200'"
+            @click="sort('label', 'desc')"
+          >
+            <IconWrapper icon-Code="hugeicons:arrow-down-02"></IconWrapper>
+          </button>
         </div>
-        
-        
-      </div>
+        <button >
+            <IconWrapper
+            class="text-blue-500 mt-1"
+            icon-Code="ph:eye-light"
+          ></IconWrapper>
+          </button>
+      </th>
+
+      <!-- Value column with sorting buttons -->
+      <th class="flex items-stretch gap-x-4">
+        Value
+        <div class="mt-1 flex justify-stretch">
+          <button
+            class="focus:outline-none"
+            :class="sortValue === 'asc' ? 'text-blue-700' : 'text-blue-200'"
+            @click="sort('value', 'asc')"
+          >
+            <IconWrapper icon-Code="hugeicons:arrow-up-02"></IconWrapper>
+          </button>
+          <button
+            class="focus:outline-none"
+            :class="sortValue === 'desc' ? 'text-blue-700' : 'text-blue-200'"
+            @click="sort('value', 'desc')"
+          >
+            <IconWrapper icon-Code="hugeicons:arrow-down-02"></IconWrapper>
+          </button>
+        </div>
+        <button >
+            <IconWrapper
+            class="text-blue-500 mt-1"
+            icon-Code="ph:eye-light"
+          ></IconWrapper>
+          </button>
+      </th>
     </div>
-  
+
+    <!-- Data Table -->
+    <div class="h-96 overflow-auto">
+      <tr
+        v-for="(cell, index) in sortedCells"
+        :key="index"
+        :class="index % 2 === 0 ? 'bg-stone-200' : 'bg-white'"
+      >
+        <Cell :time="cell.time" :label="cell.label" :value="cell.value" />
+      </tr>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, toValue } from "vue";
+import { defineComponent, computed } from "vue";
 import Cell from "./data-view.vue";
 import IconWrapper from "./icons/icon-wrapper.vue";
+
 export default defineComponent({
   components: { Cell, IconWrapper },
   name: "TableView",
-  methods:{
 
-    Time(){
-        this.htime=!this.htime
-    },
-    Label(){
-        this.hlabel=!this.hlabel
-    },
-    Value(){
-        this.hvalue=!this.hvalue
-    }
-  },
   data() {
     return {
-        htime:false,
-        hlabel:false,
-        hvalue:false,
-        
       cells: [
         {
           time: "23 Oct 2022 - 8:45 PM",
@@ -296,8 +253,56 @@ export default defineComponent({
           sticky_column:true,
         },
       ],
+
+      // Sorting state
+      sortTime: "none", // 'asc', 'desc', or 'none'
+      sortLabel: "none",
+      sortValue: "none",
     };
   },
-  
+
+  computed: {
+    sortedCells() {
+      let sortedArray = [...this.cells];
+
+      if (this.sortTime !== "none") {
+        sortedArray.sort((a, b) => {
+          if (this.sortTime === "asc") return a.time.localeCompare(b.time);
+          else return b.time.localeCompare(a.time);
+        });
+      } else if (this.sortLabel !== "none") {
+        sortedArray.sort((a, b) => {
+          if (this.sortLabel === "asc") return a.label.localeCompare(b.label);
+          else return b.label.localeCompare(a.label);
+        });
+      } else if (this.sortValue !== "none") {
+        sortedArray.sort((a, b) => {
+          if (this.sortValue === "asc") return parseFloat(a.value) - parseFloat(b.value);
+          else return parseFloat(b.value) - parseFloat(a.value);
+        });
+      }
+
+      return sortedArray;
+    },
+  },
+
+  methods: {
+    // Sorting function
+    sort(column: string, order: string) {
+      if (column === "time") {
+        this.sortTime = this.sortTime === order ? "none" : order;
+        this.sortLabel = "none";
+        this.sortValue = "none";
+      } else if (column === "label") {
+        this.sortLabel = this.sortLabel === order ? "none" : order;
+        this.sortTime = "none";
+        this.sortValue = "none";
+      } else if (column === "value") {
+        this.sortValue = this.sortValue === order ? "none" : order;
+        this.sortTime = "none";
+        this.sortLabel = "none";
+      }
+    },
+  },
 });
 </script>

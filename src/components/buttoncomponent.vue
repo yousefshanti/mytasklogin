@@ -5,16 +5,26 @@
    
     
 </template>
-  <script lang="ts" setup>
-  import { ref } from 'vue';
+  <script lang="ts" >
+ import { defineComponent } from "vue";
   import WrapperComponent from './wrappercomponent.vue';
   
+  export default defineComponent({
+  name: "Button",
+  data() {
+    return {
+      choic:true
+    };
+  },
+  methods: {
+    toggleComponent(){
+        this.choic=!this.choic
+    }
+  },
  
-  const choic =ref(true);
-  
- 
-  const toggleComponent = () => {
-    choic.value = !choic.value;
-  };
+  components: {
+    WrapperComponent
+  },
+});
   </script>
   

@@ -1,5 +1,5 @@
 <template>
-  <div :class="[isSidebarOpen ? 'ml-40' : 'ml-16']" class="absolute top-6">
+  <div :class="[isSidebarOpen ? 'ml-40' : 'ml-16']" class="absolute top-6 h-screen overflow-auto">
     <div class="">
       <IconWrapper
       class="size-6 mx-0 inline text-blue-700 absolute top-1 left-1"
@@ -12,7 +12,10 @@
     </div>
     
     <div>
-      <wrapperapp comp="tabel" class="mt-20"/>
+      <wrapperapp comp="tabel" />
+    </div>
+    <div>
+      <wrapperapp comp="tabel" />
     </div>
    
   </div>

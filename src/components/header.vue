@@ -1,6 +1,6 @@
 <template>
   <header>
-    <span class="font-mono absolute left-9 text-2xl">{{ title }}</span>
+    <span class="font-mono absolute  text-2xl">{{ title }}</span>
   </header>
 </template>
 

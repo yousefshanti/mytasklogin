@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute   w-[99%] bg-white m-2 top-5 p-3 rounded-lg  ">
+  <div class="  w-[99%] bg-white m-2  p-3 rounded-lg  ">
     
       <!--flex  gap-x-96 justify-around -->
       <div class="text-blue-600 p-2 flex gap-x-80  bg-white ">
@@ -57,7 +57,7 @@
         </div>
       </div>
 
-      <div class="h-96 overflow-auto absolute left-0 right-0 rounded-b-lg ">
+      <div class="h-96 overflow-auto  rounded-b-lg ">
         <div v-if="htime">
         <tr
           
@@ -129,6 +129,7 @@
 import { defineComponent, toValue } from "vue";
 import Cell from "./data-view.vue";
 import IconWrapper from "./icons/icon-wrapper.vue";
+import axios from "axios";
 export default defineComponent({
   components: { Cell, IconWrapper },
   name: "TableView",
@@ -150,78 +151,16 @@ export default defineComponent({
         hlabel:false,
         hvalue:false,
         
-      cells: [
-        {
-          time: "23 Oct 2022 - 8:45 PM",
-          label: "Zl Demand",
-          value: "7.31 mg/hr",
-          sticky_column:false,
-        },
-        {
-          time: "23 Oct 2022 - 8:30 PM",
-          label: "Zl Demand",
-          value: "8.35 mg/hr",
-          sticky_column:true,
-        },
-        {
-          time: "23 Oct 2022 - 8:15 PM",
-          label: "Zl Demand",
-          value: "9.14 m3/hr",
-          sticky_column:false,
-        },
-        {
-          time: "23 Oct 2022 - 8:00 PM",
-          label: "Zl Demand",
-          value: "8.68 mg/hr",
-          sticky_column:false,
-        },
-        {
-          time: "23 Oct 2022 - 7:45 PM",
-          label: "Zl Demand",
-          value: "8.68 mg/hr",
-          sticky_column:true,
-        },
-        {
-          time: "23 Oct 2022 - 7:30 PM",
-          label: "Zl Demand",
-          value: "8.68 mg/hr",
-          sticky_column:false,
-        },
-        {
-          time: "23 Oct 2022 - 7:15 PM",
-          label: "Zl Demand",
-          value: "8.68 mg/hr",
-          sticky_column:false,
-        },
-        {
-          time: "23 Oct 2022 - 7:00 PM",
-          label: "Zl Demand",
-          value: "8.68 mg/hr",
-          sticky_column:false,
-        },
-        {
-          time: "23 Oct 2022 - 8:45 PM",
-          label: "Zl Demand",
-          value: "7.31 mg/hr",
-          sticky_column:false,
-        },
-        {
-          time: "23 Oct 2022 - 8:30 PM",
-          label: "Zl Demand",
-          value: "8.35 mg/hr",
-          sticky_column:false,
-        },
-        {
-          time: "23 Oct 2022 - 8:15 PM",
-          label: "Zl Demand",
-          value: "9.14 m3/hr",
-          sticky_column:false,
-        },
-        
-      
-      ],
+      cells:[],
     };
   },
-  
+  async created() {
+    try {
+      const res = await axios.get('http://localhost:3000/cells');
+      this.cells = res.data;
+    } catch (error) {
+      console.error(error);
+    }
+  },
 });
 </script>

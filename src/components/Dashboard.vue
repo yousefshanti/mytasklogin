@@ -11,12 +11,10 @@
     >
     </div>
     
-    <div>
-      <wrapperapp comp="tabel" />
+    <div >
+      <wrapperapp comp="mymap" />
     </div>
-    <div>
-      <wrapperapp comp="tabel" />
-    </div>
+   
    
   </div>
 

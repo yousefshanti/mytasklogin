@@ -8,14 +8,7 @@
       <chart class="mx-20 mt-3"/>
     </div>
   
-    <div v-if="comp==='mymap'">
-        <div class="flex justify-start pt-5 pl-5 bg-stone-100 w-full border-b-2 h-16 rounded-t-lg ">
-          <Headercomponent title="map" class="text-blue-500" />
-        </div>
-        <div class="mx-10 mt-3">
-          <mymap class=" "/>
-        </div>
-    </div>
+   
     <div v-if="comp==='tabel' ">
 
         <div  class="flex justify-between pt-5 pl-5 bg-stone-100  border-b-2 h-16 rounded-t-lg">
@@ -26,6 +19,17 @@
           </div>
       <tableView class=""/>
     </div>
+
+    <div v-if="comp==='mymap' ">
+
+<div  class="flex justify-between pt-5 pl-5 bg-stone-100  border-b-2 h-16 rounded-t-lg ">
+  <Headercomponent title="tabel" class="text-blue-500 " />
+  <button @click="togglePopup">
+    <iconWrapper icon-code="system-uicons:fullscreen" class="size-6 text-stone-400 mr-3" ></iconWrapper>
+</button>
+  </div>
+  <MapboxMap class="w-full h-full "/>
+</div>
     
       </div>
       
@@ -36,6 +40,7 @@
   import tableView from "./table-view.vue";
   import Headercomponent from "./header.vue";
   import iconWrapper from "./icons/icon-wrapper.vue";
+  import MapboxMap from "./mymap.vue";
 import { ref } from 'vue';
 
 

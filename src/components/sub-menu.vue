@@ -1,4 +1,5 @@
 <!--"/Users/yousefshanti/Desktop/my task/Screenshot 2024-07-30 at 1.46.58 PM.png"
+/Users/yousefshanti/Desktop/my task/Screenshot 2024-07-30 at 1.46.58 PM.png
      -->
 <template>
   <div class="gap-y-2 absolute inset-y-0 left-0 w-16 bg-white flex">
@@ -7,7 +8,7 @@
       <button @click="toggleSidebar" class="size-10 m-4 absolute">
         <img
           class="border-b-2 border-gray-200 object-cover"
-          src="/Users/yousefshanti/Desktop/my task/Screenshot 2024-07-30 at 1.46.58 PM.png"
+          src="/Users/yousefshanti/Desktop/Log in page_files/flow.png"
           alt=""
         />
       </button>
@@ -87,7 +88,7 @@
         <button @click="toggleSidebar" class="flex justify-start size-5/6">
           <img
             class="inline h-12 w-10"
-            src="/Users/yousefshanti/Desktop/my task/Screenshot 2024-07-30 at 1.46.58 PM.png"
+            src="/Users/yousefshanti/Desktop/Log in page_files/flow.png"
             alt=""
           />
           <span
@@ -147,10 +148,7 @@
 
         <div v-if="list1" class="overflow-y-auto mx-2 py-2 border-b-2 bg-white">
           <Slider />
-          <Slider />
-          <Slider />
-          <Slider />
-          <Slider />
+         
         </div>
 
         <button>

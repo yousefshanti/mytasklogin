@@ -12,7 +12,7 @@
     </div>
     
     <div >
-      <wrapperapp comp="mymap" />
+      <wrapperapp comp="chart" />
     </div>
    
    

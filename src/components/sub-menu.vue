@@ -18,14 +18,14 @@
         class="flex-1 transition-all duration-300 bg-gray-100"
         PageCode="Dashboard"
       >
-        <Pages v-if="activeChoice === 'option1'" PageCode="Dashboard" />
+        <Pages v-if="activeChoice === 'option1'" PageCode="WaterQuality" />
       </div>
       <div
         :class="[isExpanded ? 'ml-40' : 'ml-1']"
         class="flex-1 transition-all duration-300 bg-gray-100"
         PageCode="Dashboard"
       >
-        <Pages v-if="activeChoice === 'option2'" PageCode="WaterQuality" />
+        <Pages v-if="activeChoice === 'option2'" PageCode="Dashboard" />
       </div>
 
       <div class="absolute top-16 border-b-2 left-4 border-gray-200">

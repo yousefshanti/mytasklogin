@@ -1,7 +1,7 @@
 <template>
-  <div class="h-screen bg-white flex justify-center ">
-  <MapboxMap class=" absolute top-10"/>
-  </div>
+ 
+  <MapboxMap class=""/>
+
 </template>
 
 <script >

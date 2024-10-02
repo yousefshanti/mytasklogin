@@ -1,5 +1,5 @@
 <template>
-  <div :class="[isSidebarOpen ? 'ml-40' : 'ml-16']" class="absolute top-6 h-screen overflow-auto">
+  <div :class="[isSidebarOpen ? 'ml-40' : 'ml-16']" class="absolute top-6  overflow-auto h-screen w-screen">
     <div class="">
       <IconWrapper
       class="size-6 mx-0 inline text-blue-700 absolute top-1 left-1"
@@ -7,12 +7,12 @@
     ></IconWrapper>
     <Headercomponent title="Dashboard" class="ml-10" />
     <span class="text-balance font-mono absolute text m-10 w-80 text-xl"
-      >this is Dashboard page</span
+      ></span
     >
     </div>
     
     <div >
-      <wrapperapp comp="chart" />
+      <wrapperapp comp="chart" class="mt-10"/>
     </div>
    
    

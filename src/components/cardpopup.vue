@@ -11,6 +11,7 @@
         <div v-if="comp === 'chart'" class="mt-4">
           <chart />
         </div>
+        
         <div v-if="comp === 'card'" class="mt-4 ">
             <div class="w-72 h-36 bg-white rounded-md p-2 justify-between flex shadow-lg">
       <span class="text-blue-500">Hourly Destination Flow</span>
@@ -27,8 +28,7 @@
   <script lang="ts">
   import { defineComponent, ref } from 'vue';
   import chart from './chart.vue';
-  import iconWrapper from './icons/icon-wrapper.vue';
-import IconWrapper from './icons/icon-wrapper.vue';
+  import IconWrapper from './icons/icon-wrapper.vue';
   export default defineComponent({
     name: "CardPopup",
     props: {

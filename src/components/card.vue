@@ -11,13 +11,17 @@
         </button>
        
       </div>
+      
     </div>
-    <div v-if="popup">
+    <div>
+        <div v-if="popup">
             <Cardpopup comp="card"/>
         </div>
         <div v-if="chart" >
             <Cardpopup comp="chart" class=""/>
         </div>
+    </div>
+    
   </template>
   
   <script lang="ts">

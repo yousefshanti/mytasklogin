@@ -10,7 +10,7 @@
       >this is WaterQuality page</span
     >
     </div>
-    <div class="flex gap-9 ml-3 mt-32">
+    <div class=" gap-9 ml-3 mt-32 grid grid-flow-col">
       <card/>
       <card/>
       <card/>

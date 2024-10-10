@@ -12,9 +12,9 @@
       <!-- Grid or inline chart layout -->
       <div :class="[grid ? 'm-5 grid grid-cols-2 ' : 'ml-40 flex flex-wrap']" class="w-full">
         <chart />
+        <!--<chart />
         <chart />
-        <chart />
-        <chart />
+        <chart />-->
       </div>
     </div>
 

@@ -1,6 +1,7 @@
 <template>
   <Dashboard v-if="PageCode === 'Dashboard'" />
   <WaterQuality v-if="PageCode === 'WaterQuality'" />
+  
 </template>
 
 <script>

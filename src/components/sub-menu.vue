@@ -19,7 +19,9 @@
         PageCode="Dashboard"
       >
         <Pages v-if="activeChoice === 'option1'" PageCode="Dashboard" />
+        
       </div>
+      
       <div
         :class="[isExpanded ? 'ml-40' : 'ml-1']"
         class="flex-1 transition-all duration-300 bg-gray-100"
@@ -306,6 +308,7 @@ import Slider from "./icons/slider.vue";
 import { defineComponent } from "vue";
 import Pages from "./Pages.vue";
 import Logout from "./logoutbutton.vue";
+import Consol from "./consol.vue";
 
 export default defineComponent({
   name: "Submenu",
@@ -353,6 +356,7 @@ export default defineComponent({
     Slider,
     Logout,
     Pages,
+    Consol,
   },
 });
 </script>

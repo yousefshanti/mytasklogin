@@ -22,7 +22,7 @@ onMounted(() => {
       data: {
         labels: ['Point 1', 'Point 2', 'Point 3', 'Point 4', 'Point 5', 'Point 6'], // Customize labels
         datasets: [
-          // 1. Measured Hydraulic Grade Line (head)
+          
           {
             label: 'Measured Hydraulic Grade Line (head)',
             data: [-12, -19, 13, 15, 22, 23], // Your data

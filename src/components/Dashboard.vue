@@ -5,13 +5,16 @@
       class="size-6 mx-0 inline text-blue-700 absolute top-1 left-1"
       icon-Code="icon-park-outline:waterfalls-v"
     ></IconWrapper>
+
     <Headercomponent title="Dashboard" class="ml-10" />
+
     <span class="text-balance font-mono absolute text m-10 w-80 text-xl"
       ></span
     >
     </div>
     
     <div >
+      <consol class="m-10"/>
       <wrapperapp comp="chart" class="mt-10"/>
     </div>
    
@@ -25,8 +28,9 @@
 import IconWrapper from "./icons/icon-wrapper.vue";
 import Headercomponent from "./header.vue";
 import wrapperapp from "./wrapperapp.vue";
+import Consol from './consol.vue';
 export default {
-  components: { IconWrapper, Headercomponent,wrapperapp },
+  components: { IconWrapper, Headercomponent,wrapperapp, Consol },
 
   name: "Dashboard",
 };

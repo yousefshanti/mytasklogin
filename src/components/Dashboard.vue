@@ -14,7 +14,8 @@
     </div>
     
     <div >
-      <consol class="m-10"/>
+     <!-- <consol class="m-10"/>-->
+      <copybutton/>
       <wrapperapp comp="chart" class="mt-10"/>
     </div>
    
@@ -29,8 +30,9 @@ import IconWrapper from "./icons/icon-wrapper.vue";
 import Headercomponent from "./header.vue";
 import wrapperapp from "./wrapperapp.vue";
 import Consol from './consol.vue';
+import Copybutton from './copybutton.vue';
 export default {
-  components: { IconWrapper, Headercomponent,wrapperapp, Consol },
+  components: { IconWrapper, Headercomponent,wrapperapp, Consol, Copybutton },
 
   name: "Dashboard",
 };

@@ -1,10 +1,10 @@
 <template>
     <div>
-        <div class="bg-stone-100 m-10 w-72 h-11 p-2 border-1 border-stone-200 rounded-md flex justify-between text-blue-400">
-            <input v-model="message" class="outline-none border-1 py-1 border-gray-300 rounded-md w-11/12" placeholder="Enter text to copy">
-            <button @click="copyUrl">
-                <IconWrapper icon-code="solar:copy-bold" class="size-5">
+        <div class="rounded-md  ">
+           <button @click="copyUrl">
+                <IconWrapper :class="[copied ? 'text-green-400' : 'text-blue-400']" icon-code="solar:copy-bold" class="size-7 bg-stone-100 m-10  border-1  ">
                 </IconWrapper></button>
+               
     
                 
         

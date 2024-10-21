@@ -11,10 +11,8 @@
 
       <!-- Grid or inline chart layout -->
       <div :class="[grid ? 'm-5 grid grid-cols-2 ' : 'ml-40 flex flex-wrap']" class="w-full">
-        <chart />
-        <!--<chart />
-        <chart />
-        <chart />-->
+        
+        <jsoncomponents/>
       </div>
     </div>
 
@@ -42,6 +40,7 @@ import chart from './chart.vue';
 import Headercomponent from './header.vue';
 import mymap from './mymap.vue';
 import IconWrapper from './icons/icon-wrapper.vue';
+import Jsoncomponents from './jsoncomponents.vue';
 
 export default defineComponent({
   props: {
@@ -50,7 +49,7 @@ export default defineComponent({
       required: true,
     },
   },
-  components: { chart, IconWrapper, Headercomponent },
+  components: { chart, IconWrapper, Headercomponent, Jsoncomponents },
   setup(props) {
     const grid = ref(true); // Toggles between grid and non-grid layout
 

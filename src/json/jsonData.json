@@ -1,0 +1,21 @@
+[
+    {
+      "type": "Heading",
+      "props": {
+        "text": "Welcome to the Dynamic Page"
+      }
+    },
+    {
+      "type": "Paragraph",
+      "props": {
+        "text": "This content is generated from a JSON file."
+      }
+    },
+    {
+      "type": "Button",
+      "props": {
+        "label": "Click Me",
+        "action": "alert('Button Clicked!')"
+      }
+    }
+  ]

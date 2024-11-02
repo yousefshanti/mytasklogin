@@ -1,5 +1,5 @@
 <template>
-  <div :class="[isSidebarOpen ? 'ml-40' : 'ml-16']" class="absolute top-6  overflow-auto h-screen w-screen">
+  <div :class="[isSidebarOpen ? 'ml-40' : 'ml-16']" class="absolute top-6  h-screen w-screen">
     <div class="">
       <IconWrapper
       class="size-6 mx-0 inline text-blue-400 absolute top-1 left-1"
@@ -13,11 +13,14 @@
     >
     </div>
     
-    <div >
+    <div class="">
      <!-- <consol class="m-10"/>-->
       <copybutton/>
       <!--<wrapperapp comp="chart" class="mt-10"/>-->
+      <wrapperapp comp="dynamic"/>
       <jsoncomponents/>
+     
+     
     </div>
    
    
@@ -34,8 +37,9 @@ import Consol from './consol.vue';
 import Copybutton from './copybutton.vue';
 import Jsoncomponents from './jsoncomponents.vue';
 import Viewjson from './viewjson.vue';
+import DynamicFilterControl from './dynamic filter control.vue';
 export default {
-  components: { IconWrapper, Headercomponent,wrapperapp, Consol, Copybutton, Jsoncomponents, Viewjson },
+  components: { IconWrapper, Headercomponent,wrapperapp, Consol, Copybutton, Jsoncomponents, Viewjson, DynamicFilterControl },
 
   name: "Dashboard",
 };

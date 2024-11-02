@@ -5,6 +5,7 @@
 <script lang="ts" setup>
 import { Icon } from "@iconify/vue";
 console.log("str");
+
 const props = defineProps({
   iconCode: {
     type: String,

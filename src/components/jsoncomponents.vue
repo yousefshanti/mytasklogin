@@ -8,7 +8,7 @@
 
       <div class="bg-white w-[70%] pb-3 rounded-lg ml-10 overflow-auto m-10">
         <div class="flex justify-between pt-5 pl-5 bg-stone-100 w-full border-b-2 h-16 rounded-t-lg">
-          <Headercomponent title="chart" class="text-blue-500" />
+          <Headercomponent title="json to components" class="text-blue-500" />
           <div class="">
             <button><IconWrapper icon-code="iconoir:table-rows" class="size-6 mx-3"></IconWrapper></button>
             <button @click="getgrid"><IconWrapper icon-code="bi:grid" class="size-6 mx-3"></IconWrapper></button>

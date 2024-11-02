@@ -1,5 +1,5 @@
 <template>
-  <Dashboard v-if="PageCode === 'Dashboard'" />
+  <Dashboard v-if="PageCode === 'Dashboard'" class="overflow-auto" />
   <WaterQuality v-if="PageCode === 'WaterQuality'" />
   
 </template>

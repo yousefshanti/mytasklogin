@@ -34,6 +34,15 @@
       </div>
     </div>
 
+    <div v-if="comp === 'use'">
+      <div class="flex justify-start pt-5 pl-5 bg-stone-100  border-b-2 h-16 rounded-t-lg">
+        <Headercomponent title="dynamic route matching" class="text-blue-500" />
+      </div>
+      <div class="mx-10 mt-3">
+        <uu/>
+      </div>
+    </div>
+
     <div v-if="comp === 'tabel'">
       <div class="flex justify-start pt-5 pl-5 bg-stone-100 w-full border-b-2 h-16 rounded-t-lg">
         <Headercomponent title="tabel" class="text-blue-500" />
@@ -51,6 +60,7 @@ import mymap from './mymap.vue';
 import IconWrapper from './icons/icon-wrapper.vue';
 import Jsoncomponents from './jsoncomponents.vue';
 import DynamicFilterControl from './dynamic filter control.vue';
+import uu from './uu.vue';
 
 export default defineComponent({
   props: {
@@ -59,7 +69,7 @@ export default defineComponent({
       required: true,
     },
   },
-  components: { chart, IconWrapper, Headercomponent, Jsoncomponents, DynamicFilterControl },
+  components: { chart, IconWrapper, Headercomponent, Jsoncomponents, DynamicFilterControl, uu },
   setup(props) {
     const grid = ref(true); // Toggles between grid and non-grid layout
 

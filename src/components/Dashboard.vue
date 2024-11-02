@@ -18,9 +18,10 @@
       <copybutton/>
       <!--<wrapperapp comp="chart" class="mt-10"/>-->
       <wrapperapp comp="dynamic"/>
+      
       <jsoncomponents/>
      
-     
+      <wrapperapp comp="user"/>
     </div>
    
    
